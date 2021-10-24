@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel= "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class= "container">
+            <br>
+            <table class="table table-bordered table-border text-center shadow">
+                <tr>
+                    <th>book_id</th>
+                    <th>book_name</th>
+                    <th>author_name</th>
+                    <th>author_email</th>
+                    <th>book delete</th>
+                    <th>book edit</th>
+                </tr>
+                <% books.forEach(function(books){ %>
+                    <tr>
+                        <td><%= books.book_id %></td>
+                        <td><%= books.book_name %></td>
+                        <td><%= books.author_name %></td>
+                        <td><%= books.author_email %></td>
+                        <td><a href="/delete/<%= books.book_id %>" class="btn btn-danger btn-sm">delete</a></td>
+                        <td><a href="/edit/<%= books.book_id %>" class="btn btn-success btn-sm">edit</a></td>
+                    </tr>
+                <%  })  %>
+            </table>
+        </div>
+    </body>
+</html>
